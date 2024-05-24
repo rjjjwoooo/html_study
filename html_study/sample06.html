@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>재복습</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gugi&display=swap" rel="stylesheet">
+
+    <style>
+        body {margin: 0;} /* html은 마크업을 하면 내부에서 공백이 생기기에 body {margin: 0;}을 입력하면 공백이 채워진다. 확인은 검사해서 휴대폰 모양을 보면 된다.*/
+
+        #layout01 {max-width:900px;margin: auto;}
+        header {background: skyblue; padding:10px; text-align: center;}
+        header:hover {background: tomato; transition: 0.5s;}
+        
+    
+
+        #layout02 {display: flex;}
+        main      {flex:2.5}
+        main section {background: aqua; padding:20px; text-align: center;}
+        main section:hover {transform: rotate(-10deg); transition: 0.5s;}
+        main article {background: rgb(255, 0, 106); padding:90px; text-align: center;}
+        aside     {background: #ddd; flex:1; text-align: center; padding:70px 0;}
+        aside:hover {background:linear-gradient(rgb(71, 212, 255),gold); transition:0.5s} /*그라데이션 넣기*/
+        
+        [href*=naver] {width: 100px; display: block; margin:auto;}
+        [href*=naver] img {width: 100%; display: block;}
+
+        footer    {padding:20px; background:linear-gradient(orange, yellow); text-align: center;}
+        footer:hover {background:linear-gradient(yellow, orange); transition: 0.5s;}
+
+        nav ul {display: flex; /*list-style-position: inside;*/ text-align: center; max-width: 700px; margin: auto; padding: 50px 0; /*list-style-type: circle;*/ list-style-type: none;
+        flex-wrap:wrap ; justify-content: center;}
+        /*padding:50px 0은 top,bottom은 50px, right,left는 0
+        list-style-type: circle는 점을 투명하게 했다. 그걸 none하면 표시가 동그라미 표시가 안된다. flex-wrap은 크기를 유동적인거를 고정시키겠다라는 뜻, 그래서 아래 flex:1을 주석해야함  justify-content: center는 기기(가로기기의)의 가운데로 맞춘다.
+        */
+        
+        nav li {/*flex:1;*/ transition: 0.5s; flex-basis:135px; border: 1px solid red; }
+        nav a {color: black; text-decoration: none;}
+        nav li:hover {transform: scale(1.5); transition: 0.5s;}
+
+       
+        
+      
+        /* li안에 a를 크게하려면 블록이 아니라 display: inline-block를 써야한다.*/
+        
+        @media (max-width:550px) 
+        {
+            #layout02 {flex-direction: column;}
+            nav li:nth-child(4),
+            nav li:nth-child(5) 
+        }
+            /*{display: none;} *//*:nth-child() 는 몇번째 칸 변경할 때 사용*/
+        
+    
+      nav, h1, main, section,h2
+      {
+        font-family: "Black Han Sans", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+       } /*할 때 section h2 이렇게 해도 된다. 그럼 h2만 적용된다. */
+
+        aside, footer ,article {
+        font-family: "Gugi", sans-serif;
+         font-weight: 400;
+        font-style: normal;
+}
+
+        
+    </style>
+
+</head>
+<body>
+    <div id="layout01"> <!-- 영어를 먼저쓰고 숫자를 써야한다. -->
+        <header><h1>뚜뚜</h1></header>
+        <nav>
+                <ul>
+                    <li><a href="#">메뉴1</a></li>
+                    <li><a href="#">메뉴2</a></li>
+                    <li><a href="#">메뉴3</a></li>
+                    <li><a href="#">메뉴4</a></li>
+                    <li><a href="#">메뉴5</a></li>
+                </ul>
+
+
+        </nav>
+        <div id="layout02">
+            <main> <!--중요정보-->
+                <section>
+                    <h2>따따</h2>
+                    <p>대통령은 필요하다고 인정할 때에는 외교·국방·통일 기타 국가안위에 관한 중요정책을 국민투표에 붙일 수 있다. 제안된 헌법개정안은 대통령이 20일 이상의 기간 이를 공고하여야 한다.</p>
+
+                    <p>새로운 회계연도가 개시될 때까지 예산안이 의결되지 못한 때에는 정부는 국회에서 예산안이 의결될 때까지 다음의 목적을 위한 경비는 전년도 예산에 준하여 집행할 수 있다.</p>
+
+
+                </section>
+                <article>
+                    <h2>띠띠</h2>
+                    <p>모든 국민은 학문과 예술의 자유를 가진다. 법관은 헌법과 법률에 의하여 그 양심에 따라 독립하여 심판한다. 대통령이 궐위되거나 사고로 인하여 직무를 수행할 수 없을 때에는 국무총리, 법률이 정한 국무위원의 순서로 그 권한을 대행한다. 법률안에 이의가 있을 때에는 대통령은 제1항의 기간내에 이의서를 붙여 국회로 환부하고, 그 재의를 요구할 수 있다. 국회의 폐회중에도 또한 같다.</p>
+                </article>
+            </main> 
+            <aside><h3>네이버
+               <a href="https://naver.com"><img src="images/logo.jpg" alt="네이버로고"></a></h3>
+              <p>모든 국민은 학문과 예술의 자유를 가진다. 법관은 헌법과 법률에 의하여 그 양심에 따라 독립하여 심판한다. 대통령이 궐위되거나 사고로 인하여 직무를 수행할 수 없을 때에는 국무총리, 법률이 정한 국무위원의 순서로 그 권한을 대행한다. 법률안에 이의가 있을 때에는 대통령은 제1항의 기간내에 이의서를 붙여 국회로 환부하고, 그 재의를 요구할 수 있다. 국회의 폐회중에도 또한 같다.</p>
+              
+            </aside>
+              
+        </div>
+        <footer><h4>룰루</h4></footer>
+
+    </div>
+</body>
+</html>
+
+<!-- margin은 내부여백을 채울때 가운데 맞출때 margin:auto; 이렇게 하고  글씨를 가운데로 하려면 text-align:center 하면 된다.-->

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--viewport가 없으면 휴대폰 크기에 따라 font 크기가 유지가 안된다-->
+    <title>라인컴퓨터</title> 
+    <style>
+        body {max-width:900px; margin:auto; border:3px dashed red;}  /* 최대 넓이를 900까지만 해라, 더이상 커지지 않는 코딩,
+        margin:auto 는 외부여백이고 가운데 정렬로 해라 라는 뜻 위의 여백을 30px 줄려면 margin:auto; margin-top:30px; 이렇게 준다*/
+        header{border:3px solid gray;}
+        nav   {background: pink;padding:20px;}
+        nav + div {border:3px double blue; display:flex;}
+        div  div{border:5px solid green; flex:2.5;}
+        aside {background: #ddd; flex:1;}
+        h2:hover {background: skyblue; padding:20px;} /* 마우스로 선택할때 색이 변하게 하는 언어 :hover{} 이다.*/
+        h2 {border:3px solid yellow; border-radius: 10px; color: red; font-weight:normal;} /* h2의 제목으로 되어있는 것을 글씨는 빨강, 폰트는 굵은것이 아닌 기본으로 한다.라는 뜻 */
+        @media (max-width:600px) {  nav + div {flex-direction: column;}      } /* 반응형(작은기계장치) max-width는 넓이가 600까지 601이면 글씨가 옆으로 간다.*/
+    </style>
+</head>
+<body>
+  <header><h1>상단구역</h1></header>
+  <nav>메뉴부분</nav>
+  <div>
+        <div>
+            <section><h2>정보구역 -1</h2> </section>       
+            <article><h2>정보구역 -2</h2></article>
+        </div>
+        <aside>부가정보</aside>
+    </div> 
+ <footer>하단정보</footer>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>재복습</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gugi&display=swap" rel="stylesheet">
+
+    <style>
+        #layout01 {max-width:900px; border:3px solid pink; margin: auto;}
+        header {background: skyblue; padding:10px; text-align: center;}
+        header:hover {background: tomato; transition: 0.5s;}
+        
+    
+
+        #layout02 {display: flex;}
+        main      {flex:2.5}
+        main section{background: aqua; padding:20px; text-align: center;}
+        main section:hover {transform: rotate(-10deg); transition: 0.5s;}
+        main article{background: gold; padding:20px; text-align: center;}
+        aside     {background: #ddd; flex:1; text-align: center; padding:70px.0;}
+        aside:hover {background: aquamarine; transition:0.5s}
+        footer    {border:1px dotted grey; background: gray; text-align: center;}
+        footer:hover {background: blanchedalmond; transition: 0.5s;}
+
+        nav ul {display: flex; /*list-style-position: inside;*/ text-align: center; max-width: 700px; margin: auto; padding: 50px 0; /*list-style-type: circle;*/ list-style-type: none;}
+        /*padding:50px 0은 top,bottom은 50px, right,left는 0
+        list-style-type: circle는 점을 투명하게 했다.
+        */
+        
+        nav li {flex:1;}
+        nav a {color: black; text-decoration: none;}
+        nav li:hover {transform: scale(1.5); transition: 0.5s;}
+       
+      
+        /* li안에 a를 크게하려면 블록이 아니라 display: inline-block를 써야한다.*/
+        
+        @media (max-width:550px) {
+            #layout02 {flex-direction: column;}
+            nav li:nth-child(4),
+            nav li:nth-child(5) {display: none;} /*:nth-child() 는 몇번째 칸 변경할 때 사용*/
+        }
+
+       h1, main{
+        font-family: "Black Han Sans", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+       }
+
+        aside, footer ,nav {
+        font-family: "Gugi", sans-serif;
+         font-weight: 400;
+        font-style: normal;
+}
+
+        
+
+    
+        
+    </style>
+
+</head>
+<body>
+    <div id="layout01"> <!-- 영어를 먼저쓰고 숫자를 써야한다. -->
+        <header><h1>뚜뚜</h1></header>
+        <nav>
+                <ul>
+                    <li><a href="#">메뉴1</a></li>
+                    <li><a href="#">메뉴2</a></li>
+                    <li><a href="#">메뉴3</a></li>
+                    <li><a href="#">메뉴4</a></li>
+                    <li><a href="#">메뉴5</a></li>
+                </ul>
+
+
+        </nav>
+        <div id="layout02">
+            <main> <!--중요정보-->
+                <section><h2>따따</h2></section>
+                <article><h2>띠띠</h2></article>
+            </main> 
+            <aside><h3>두두</h3></aside>
+        </div>
+        <footer><h4>룰루</h4></footer>
+
+    </div>
+</body>
+</html>
+
