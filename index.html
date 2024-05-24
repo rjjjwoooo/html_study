@@ -5,23 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>8교시 미션-1</title>
     <style>
-
-        *{padding:0; margin:0;}
+        *{padding: 0; margin: 0;}
         img {width:100%;}
 
         #layout {
             /* height:700px; */
             min-height: 70vh; /*최소높이 700*/
             /* max-width: 900px; /*900보다 넓어지지 않는다*/
-            max-width: 80vw;
+            max-width: 700px;
             background-color: cadetblue;
             margin:auto;
             /*margin-top: 15vh;*/
             display:flex;
-            border:10px solid red;
             justify-content: center; /*걍 모든거 다 center로 함*/
             align-items: flex-start;
-            padding-top:20px;
+            padding-top:20px; padding-left:20px;
         } /*부모 방향 세로방향 가운데 있고싶으면 align-items:center하면 세로방향으로 정렬되고 flex-start하면 위로 정렬된다.*/
         #layout:hover {
             background-color:chocolate;            
@@ -31,8 +29,8 @@
         }
         form [type="submit"] {margin:auto; display:block;}
 
-        #layout1 {border:5px dashed yellow; flex-basis:250px;box-sizing: border-box;}/*box-sizing을 하면 노란색 튀어나온 테두리가 들어간다.*/
-        main     {border:5px dashed yellow; flex-basis:250px;box-sizing: border-box;}
+        #layout1 { flex-basis:250px;box-sizing: border-box;}/*box-sizing을 하면 노란색 튀어나온 테두리가 들어간다.*/
+        main     { flex-basis:250px;box-sizing: border-box;}
 
        /* footer {border:10px solid blue; background:yellow; 
             height:300px; padding:50px;width:500px;box-sizing: border-box;}
