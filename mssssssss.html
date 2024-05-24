@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ms2</title>
+    <style>
+        #layout01 {max-width:80vw; height:70vh;border:10px solid red;
+            background: skyblue;margin:auto;margin-top:15vh; justify-content:center;
+            display: flex; align-items:flex-start;padding-top: 20px;}
+
+        /*부모 방향 세로방향 가운데 있고싶으면 align-items:center하면 세로방향으로 정렬되고 flex-start하면 위로 정렬된다.*/
+        
+
+
+
+        form {border:1px solid red;max-width:270px;}
+        form div {border:1px solid blue;}
+        [type*=submit] {display:block; margin:auto;}
+
+        #layout02 {display: flex; border: 5px dashed yellow; flex-basis:500px;}
+        main {max-width:270px;border:5px dashed rgb(202, 61, 91);max-width:270px;flex-basis:250px;}
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div id="layout01">
+        <div id="layout02">
+            <form action="#">
+                <h2>이름 입력</h2>
+            <div>
+                <label for="aaa">First name:</label>
+                <input type="text" id="aaa" placeholder="홍">
+                <label for="bbb">Last name:</label>
+                <input type="text" id="bbb" placeholder="길동">
+            </div>
+            <input type="submit" value="submit">
+            </form>
+            <main>
+                <h2>이메일 수신동의</h2>
+            <form action="#">
+                <input type="radio" id="email" name="e">
+                <label for="email">Yes</label><br>
+                <input type="radio" id="no" name="e">
+                <label for="no">no</label><br>
+                <input type="submit" value="확인">
+            </form>
+            </main>
+
+        </div>
+    </div>
+    
+</body>
+</html>

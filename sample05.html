@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>라인컴퓨터아트학원</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet"><!-- 구글 폰트 -->
+
+    <style>
+        #layout {max-width:700px; border:1px solid blue; margin:auto;} /*화면이 너무 커서 넓이를 700으로 제한을 두고 테두리를 1px 실선으로 가운데 맞춤으로 했다.*/
+        [href*=naver] {width:100px; display:block; margin:auto;} /*
+        (1)href라는 속성을 찾고 그중에서 naver라는 단어가 들어가 있는 곳을 찾으라는 뜻 이다.또한 
+        (2)img,a태그는 인라인 태그라 블록레벨로 성질을 바꿔주고 아래 부모에 맞춰서 100%로 맞춰서 해야 width가 변경된다,
+        (3) margin:auto를 통해 가운데 맞춤을 한다
+        (4) 아래 display:block을 이용하여 빈틈없이 한다.
+        (5) 다하면 {width:200px; border:5px solid red; display:block; margin:auto;}이 중에 border:5px solid red;빨강 테두리는 지워도 된다.*/
+        [href*=naver] img {width:100%;display:block;} /* 부모에 맞춰서 꽉차게 해라*/
+
+       
+        nav {text-align:center; padding:20px;} /* 이 코딩도 위의 코딩과 같이 중앙에 배치한다. 안먹히는 것은 header의 a 태그는 안먹힌다.
+        main img {max-width: 100%;} /* 이 코딩은 이미지가 아무리 커도 부모보다 커질 수 없도록 하는 코딩이다.즉 화면을 700으로 제한을 두었기에 그것보다 무조건 클수는 없다. */
+        nav a{color: black; text-decoration: none; display: inline-block; transition: 0.3s; font-family: "Black Han Sans", sans-serif;} /* nav의 a의 선이 그어진걸 검정으로 바꾸고 비활성화시켜라 즉 밑줄 친것이 없어진다 */
+        nav a:not(:last-child) {margin-right:20px;} /*
+        (1) nav a:not(:last-child) {background: red; margin-right:20px;}
+        nav안에서 a의 마지막 5번은 빼고 나머지는 빨강색으로 박스를 해라 라는 뜻 */
+        nav a:hover {transform: scale(1.5)  translateY(-10px);}
+        nav a:hover {background: skyblue;}
+        main {text-align: center; padding-top: 30px;} /* 이 코딩은 부모가  text-align: center를 하면 부모 넓이의 가로방향 중앙에 배치 된다. 하지만 안 될때도 있다. 자손중에 {display:block;} 성질이면
+        중앙 정렬이 안되다 */
+        main img {max-width: 100%;}
+        iframe {border-radius: 50px; border:7px dashed red;} /*map의 모서리를 둥그렇게 하는법
+
+        .black-han-sans-regular {
+            font-family: "Black Han Sans", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        } /*구글 폰트*/
+
+
+
+    </style>
+</head>
+<body>
+    <div id="layout">
+        <header>
+            <a href="https://naver.com"><img src="images/logo.jpg" alt="네이버로고"></a> <!-- 네이버 로고를 jpg로 저장후 src="파일명, 이름.jpg" 적고 alt="네이버로고" 라한다.-->
+            <nav>
+                <a href="sample01.html">샘플1</a><!--임시로 링크 걸리는걸 동작해본다 하려면 #을 넣으면 된다.-->
+                <a href="sample02.html">샘플2 </a>
+                <a href="sample03.html">샘플3</a>
+                <a href="sample04.html">샘플4</a>
+                <a href="sample05.html">샘플5</a> 
+            </nav>
+        </header>
+        <main>
+           <!--<img src="images/map.png" alt="지도">--> 
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3173.040059239307!2d126.83351437645733!3d37.31787877210405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b6f1b4de62e49%3A0x5153c99c56766ccf!2z65287J247Lu07ZOo7YSw7JWE7Yq47ZWZ7JuQ!5e0!3m2!1sko!2skr!4v1716279986991!5m2!1sko!2skr" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> <!-- alt는 이미지가 깨져 안보일 경우 고객들이 보았을 때 문구로 나타내는 코딩이다.-->
+            
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼태그 연습하기</title>
+
+    <style>
+        /* {padding:0; margin:0;} /* 이걸쓰면 <h> 의 여백 및 내부 여백의 공백을 메꿀 수 있다.*/
+    
+        img {width: 100%;} /*부모 이미지를 넘지 말아라*/
+        #layout01 {max-width:900px;margin:auto;}
+        header {background: linear-gradient(rgb(0, 247, 255), rgba(75, 0, 0, 0.438) );text-align:center; padding:20px 0;}
+        /* heading이 가지고 있는 영역 때문에 위에 빈영역이 있다. 그렇기에 외부 마진을 0을 하면 꽉 채워진다. 처음부터 빈칸 없이 하는 법은 *{padding:0; margin:0;} 하면 된다. */
+        header h1 {margin:0;}
+
+
+        nav {height:300px; background:radial-gradient(circle, orange 20%, green 70%, blue 20%);margin:20px auto; border-radius: 20px;} /*linear-gradient는 일자로 그라데이션 되고 radial-gradient는 동그랗게 된다*/
+        nav:hover {background: radial-gradient(circle, mintcream 20%, red, skyblue 50%, pink 40%); transform: rotate(360deg); transition: 0.5s;}
+       
+
+        #layout02 {display: flex; margin:0;} 
+        #layout02 p::first-letter{font-size:2rem; border:2px solid red; background: rgba(0,0,255,0.5); border-radius: 30px; padding:0 10px;} /* 첫글자를 2rem의 크기로 하는 법*/
+        #layout02 p:hover::first-letter {background: rgb(57, 63, 60);}
+        main p:hover {background: red; transition: 0.5s;}
+        
+        main {background:plum; padding:20px; flex:2;}
+        main h2,p {margin:0;}
+
+        aside {background: mintcream;padding:20px; flex:1;} fo
+        aside h3,p {margin: 0;}
+
+        footer {background-color: dodgerblue;padding:20px; text-align: center;}
+        footer h3 {margin:0;}
+
+        /*form tag 부분*/
+        form {max-width: 220px; margin: auto;margin-right: 0; text-align: left;align-items:center;display: flex;}
+         /*flex를 하면 옆으로 가긴 하는데 자식 요소의 높이가 높아지면 그 높이만큼 높아지는 현상이 있다.*/
+        form input {display: block;}
+        form div {flex:1;} /*특정 자식에만 flex:1을 하면 특정자식만 넓어지고 다른 자식들은 좁은채로 그대로 있다 */
+        
+        
+        [type="text"] {margin-bottom: 5px;}
+        form div input {width: 150px;background: mediumaquamarine;}
+        [type="submit"] {width: 50px;height: 43px; border-radius:30px;}
+
+        form div input {border-radius: 20px;}
+        form div input:hover {background: radial-gradient(rgb(238, 234, 234) 10%,skyblue 30%, rgb(255, 0, 200) 50%);transition: 1s;}
+        form input:hover {background: skyblue; transition: 0.5s;}
+
+
+
+        @media (max-width:550px)
+        {
+            #layout02 {flex-direction: column;}
+        }
+    </style>
+</head>
+<body>
+    <div id="layout01">
+        <header><h1>상단</h1>
+        <form action="#" method="post">
+            <div>
+                <input type="text" placeholder="ID:">
+                <input type="password" placeholder="PW:">
+            </div>
+            <input type="submit" value="확인">
+
+        </header>
+        </from>
+        <nav></nav>
+       <div id="layout02">
+        <main><h2>메인영역</h2>
+            <p>대통령의 임기가 만료되는 때에는 임기만료 70일 내지 40일전에 후임자를 선거한다. 국무총리는 대통령을 보좌하며, 행정에 관하여 대통령의 명을 받아 행정각부를 통할한다.</p>
+
+            <p>국가는 평생교육을 진흥하여야 한다. 국정감사 및 조사에 관한 절차 기타 필요한 사항은 법률로 정한다. 모든 국민은 사생활의 비밀과 자유를 침해받지 아니한다.</p>
+            
+            <p>국가는 여자의 복지와 권익의 향상을 위하여 노력하여야 한다. 재산권의 행사는 공공복리에 적합하도록 하여야 한다. 법관은 헌법과 법률에 의하여 그 양심에 따라 독립하여 심판한다.</p>
+            
+            
+        </main>
+        <aside><h3>부가영역</h3>
+            <p>민주평화통일자문회의의 조직·직무범위 기타 필요한 사항은 법률로 정한다. 타인의 범죄행위로 인하여 생명·신체에 대한 피해를 받은 국민은 법률이 정하는 바에 의하여 국가로부터 구조를 받을 수 있다.</p>
+
+            <p>외국인은 국제법과 조약이 정하는 바에 의하여 그 지위가 보장된다. 공무원의 신분과 정치적 중립성은 법률이 정하는 바에 의하여 보장된다. 비상계엄이 선포된 때에는 법률이 정하는 바에 의하여 영장제도, 언론·출판·집회·결사의 자유, 정부나 법원의 권한에 관하여 특별한 조치를 할 수 있다.</p>
+            
+            
+        </aside>
+       </div>
+        <footer><h3>하단정보</h3>
+            <img src="images/sommer.jpg" alt="여름 이미지">
+        </footer>
+    </div>
+
+    
+</body>
+</html>

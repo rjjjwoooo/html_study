@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width"> <!--viewport가 없으면 휴대폰 크기에 따라 font 크기가 유지가 안된다-->
+<title>라인_실습_김건우</title>
+<style>
+    body {max-width:900px; margin:auto; border:3px dashed rgb(255, 0, 179);}/* 최대 넓이를 900까지만 해라, 더이상 커지지 않는 코딩,
+        margin:auto 는 외부여백이고 가운데 정렬로 해라 라는 뜻 위의 여백을 30px 줄려면 margin:auto; margin-top:30px; 이렇게 준다*/
+     * {padding:0; margin:0; }
+html,body {font:9pt 나눔고딕;}
+h1,h2 {font-size:1rem;}
+main h1 {display:none;}
+header {height:50pt; background:skyblue; transition: 0.5s;} /*transition은 hover 안에 하면 안된다.!*/
+header:hover {background: aqua;} /* 마우스로 선택하였을 때 색이 변하는 코딩 :hover {}를 사용하면 된다 */
+#main_aside {border:2px dashed blueviolet;} /*이렇게 id를 작성하면 이렇게 부모 형제 안따지고 다 적용된다. */
+section {height:200pt;background:linear-gradient(30deg,tomato, gold); transition: 0.5s;}
+section:hover{background:linear-gradient(-30deg,yellow, green);}
+section:hover h2 {display:none;} /* hover 하고 띄어쓰고 h2를 쓰면 일반 정보라는 글이 사라진다*/
+article {height:100pt;background:orange;}
+article:hover{background: linear-gradient(30deg,tomato, gold);} /* linear-gradient 는 그라데이션을 넣는거다*/
+article:hover h2 {display:none;} /* hover 하고 띄어쓰고 h2를 쓰면 일반 정보라는 글이 사라진다*/
+aside {height:50pt;background:gray;}
+aside:hover {transform:rotate(-5deg);transition: 0.5s;}/*마우스를 갖다되면 -5도 회전하게 하는 코딩 및 transition 함수는 애니메이션 느낌나게 부드럽게 움직인다*/
+footer {height:30pt; background:brown;}
+footer:hover {transform:rotate(5deg);} /*마우스를 갖다되면 5도 회전하게 하는 코딩*/
+b  {border:1px dotted blue; color:red; padding:20px; font-weight:normal; border-radius:10px; background:rgba(255,255,0,0.5);} /*h 태그는 기본 글씨가 굵어진다. 그래서 정보라는 글씨가 굵게 하려고 했는데 이미 h태그 때문에 굵어졌다
+그래서 정보 앞에 b태그를 해도 굵어진 상태이기에 안변해서 스타일을 통해 color는 빨간색 굵기는 얇게 하기 위해 font-weigh:normal; 를 썼다., border-radius는 각진 네모가 아닌 둥글게 하기 위해 사용
+또한 네모로 채워진 곳을 투명한 노란색을 하기 위해 rgba를 사용해서 맨뒤의 0,5로 주워서 반투명으로 만들었다. 1로 주면 불투명 0은 투명이다, b는 블록요소가 아니다 */
+b:hover {transform: rotate(15deg);} /* b는 즉 {display:inline:} 인라인으로 이렇게 쓰면 안되고 인라인 성질을 유지한채 블록 기능을 추가하려면 {display:inline-block;}이걸 추가하면 된다 . 예를 들어
+24줄의 rgba(255,255,0,0.5s); display:inline-block; 을 넣어주고 애니매이션 효과를 넣으려면  display:inline-block; transition: 0.5s; 해주면 된다. Tip- transfrom은 inline 요소는 안먹혀서 앞에 처럼
+블록 설정을 해주고 해야한다. */
+@media (min-width:600pt) {
+ #main_aside {display:flex; height:300pt;}
+ main {flex-grow:3; }
+ aside { flex-grow:1; height:100%;}
+}
+</style>
+</head>
+<body>
+<header><h1>상단</h1></header>
+<div id="main_aside"> <!--  id를 작성하면 부모,형제 안따지고 style를 적용 할 수 있다. -->
+ <main>
+ <h1>메인영역</h1>
+ <section><h2>일반<b>정보</b></h2></section>
+ <article><h2>기사<b>정보</b></h2></article>
+ </main>
+<aside><h2>부가<b>정보</b></h2></aside>
+</div>
+<footer><h1>하단</h1></footer>
+</body>
+</html>
