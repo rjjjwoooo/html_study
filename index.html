@@ -3,89 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>8교시 미션-1</title>
+    <title>mission</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
     <style>
-        *{padding: 0; margin: 0;}
-        img {width:100%;}
+        /*test2에서 border 지운 편*/
 
-        #layout {
-            /* height:700px; */
-            min-height: 70vh; /*최소높이 700*/
-            /* max-width: 900px; /*900보다 넓어지지 않는다*/
-            max-width: 700px;
-            background-color: cadetblue;
-            margin:auto;
-            /*margin-top: 15vh;*/
-            display:flex;
-            justify-content: center; /*걍 모든거 다 center로 함*/
-            align-items: flex-start;
-            padding-top:20px; padding-left:20px;
-        } /*부모 방향 세로방향 가운데 있고싶으면 align-items:center하면 세로방향으로 정렬되고 flex-start하면 위로 정렬된다.*/
-        #layout:hover {
-            background-color:chocolate;            
-        }
-        form {            
-            max-width: 270px;
-        }
-        form [type="submit"] {margin:auto; display:block;}
+        * {padding:0; margin:0;} /*phone의 여백을 없기 위한 과정*/
+        img {width:100%;} /*부모이미지 보다 크지말아라 이미지가 벗어나면 부모 안에 들어오는 명령어*/
+        #aaa {
+            max-width:900px;
+            min-height:700px;margin:auto;
+            background: rgba(184, 227, 235);display:flex;
+            justify-content:center; align-items:flex-start;
+             } /*align-items:flex-start 하면 위로 정렬, center하면 가운데 정령
+                  justify-content:center; 하면 가운데 정렬                 */
+        #aaa:hover {background:rgba(184, 227, 235,0.5);transition:0.5s;}
 
-        #layout1 { flex-basis:250px;box-sizing: border-box;}/*box-sizing을 하면 노란색 튀어나온 테두리가 들어간다.*/
-        main     { flex-basis:250px;box-sizing: border-box;}
+        #bbb {margin-right: auto;}
+        form {width:225px;display:flex;}
+        form input {font-family: "Dongle", sans-serif;
+                    font-weight: 400;
+                     font-style: normal;
+                    } 
 
-       /* footer {border:10px solid blue; background:yellow; 
-            height:300px; padding:50px;width:500px;box-sizing: border-box;}
-        /*box-sizing 속성은 넓이에서 내부여백과 테두리 두께를 제외할 때 사용할 수 있다.
-        넓이(또는 높이)는 기본적으로 (넓이값+내부여백+테두리두께) 로 이루어짐
-        ex 넓이:500px,내부여백:100px 테두리 두께:20px -> 총 넓이는 620px가 된다.
-        결론으로 넓이는 500인데 총 넓이는 620이라 원래 넓이 500에 가깝게 해라 해서 사용하는
-        게 box-sizing:border-box이다.*/    
-        
+        [type*=submit] {height:64px; margin-top:26px; margin:auto;margin-right:0;margin-bottom:0;}
+
+        #fff {}
+        [value*=확인] {height:30px;margin:auto;margin-right:0;}
+
+        nav {margin:auto;}
         @media(max-width:500px)
         {
-            #layout {flex-direction: column;}
-            #layout>* {width: 100%;} 
-            /*모든 자식 요소 표소 >* 를 이표시로 하고 flex-basis는 px,등 width랑 같은 표시*/
+            #aaa {flex-direction: column;}
         }
- </style>
+
+        #aaa {
+         font-family: "Dongle", sans-serif;
+         font-weight: 400;
+         font-style: normal;
+            }
+
+
+
+    </style>
 </head>
 <body>
-    <div id="layout">
-        <div id = 'layout1'>
-            <h2>이름 입력</h2>
-            <form action="#">
-                <label for="aaa">First name:</label>
-                <input type="text" id="aaa" name="fname" placeholder="홍"><br>
-                <label for="bbb">Last name:</label>
-                <input type="text" id="bbb" name="lname" placeholder="길동"><br><br>
-                <input type="submit" value="Submit">
-            </form>  
+    <div id="aaa">
+        <div id="bbb">
+         <h2>예약일자</h2>
+           <form action="#" method="post"> 
+            <main>
+                <label for="ccc">Reservation date</label><br>
+                <input type="date" id="ccc" name="eee"><br>
+                <label for="ddd">phone number</label><br>
+                <input type="text" id="ddd" name="eee" placeholder="전화번호:">
+            </main>
+                <input type="submit" value="눌러!">
+           </form>
         </div>
-        <main>
-            <h2>이메일 수신동의</h2>
-            <form action="#">
-                <input type="radio" id="email" name="e"> <!--ladio버튼은 예,아니요 할때 사용-->
-                <label for="email">예</label><br>
-                <input type="radio" id="no" name="e">
-                <label for="no">아니오</label>
+        <nav>
+            <img src="images/mo.jpg" alt="구름">
+        </nav>
+        <div id="fff">
+         <h2>activity cheak</h2>
+           <form action="#" method="post">
+            <div>
+                <input type="radio" id="aba" name="lo">
+                <label for="aba">오토바이</label><br><br>
+                <input type="radio" id="abe" name="lo">
+                <label for="abe">스노쿨링</label><br><br>
+                <input type="radio" id="abc" name="lo">
+                <label for="abc">스키점프</label><br>
+            </div>
                 <input type="submit" value="확인">
-            </form>
-            <input type="checkbox" name="hobby" value="m">등산<br>
-            <input type="checkbox" name="hobby" value="f">수영<br>
-            <input type="checkbox" name="hobby" value="v">영화감상<br><br>
-            <input type="color"><br>
-            <input type="date"><br>
-            <input type="email"><br><!--input type이 submit이여야 한다.-->
-            <input type="file"><br>
-            <input type="hidden"><br>
-            <input type="image" src="images/b.png" alt="느느"><br>
-            <input type="number" max="35" min="20"><br> <!--숫자만 입력-->
-            <input type="range" min="40" max="80"><br> <!--불륨조절-->
-            <input type="search"><br>
-            <input type="reset"><br>
-            <input type="tel"><br><!--휴대폰에서 전화번호 keypad로 나온다-->
-
-        </main>
+           </form>
+        </div>
     </div>
-   <!-- <footer><h2>하단정보</h2></footer> -->
+    
 </body>
 </html>
