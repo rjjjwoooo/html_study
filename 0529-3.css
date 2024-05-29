@@ -1,0 +1,51 @@
+* {margin:0; padding:0;}
+img {max-width:100%;}
+
+ #layout {max-width:900px; margin:auto; border:1px solid red;position: relative;}
+
+ /*상단*/
+ header 
+ {
+     height:100px;background: rgb(198, 217, 252);border:1px solid greenyellow;
+     z-index: 1; position: relative; 
+ }
+ /*메뉴*/
+ nav:not(.subMenu)   {margin-top:30px;} /*nav의 마진 탑을 30px을 주는데 서브메뉴는 빼고 줘라*/
+ nav ul {display: flex;list-style: none;justify-content:space-around;}
+ nav li {/*border:1px solid red;*/width:100px;/*flex: 1;*/}
+ nav a  {display: block;} /*서브메뉴는 인라인 레벨이였는데 블록 레벨을 해서 아래로 정렬됨*/
+ 
+ 
+ /*메인*/
+ main {height:70vh;background: darkkhaki;border:1px solid darkblue;} /*100%중에 70%을 잡아 먹는다*/
+ main img {height: 100%;} /*main의 height의 값이 있어야 img가 100%로 찬다.*/
+
+ /*메인메뉴*/
+ .mainMenu
+  {
+    text-align: center;background:skyblue;border-radius: 20px;text-decoration: none;
+    color:black;
+ }
+ 
+ /*서브메뉴*/
+ .subMenu 
+ {
+     height: 0; /*display: none;*/ transition: 0.5s; overflow: hidden;
+     background: rgba(255,255,255,0.85);position: relative;
+ }
+ nav li:hover .subMenu{height: 120px;/*display: block;*/}/*메인 메뉴에 손가락을 데면 형제인 한명 서브메뉴만 호버기능 전부 하려면 ~로 표시*/
+ 
+
+ /*하단*/
+ footer {height:100px;background: rgb(240, 221, 209);border:1px solid deeppink;}
+ 
+ /*공지사항*/
+ #popup 
+ {
+     background:  rgb(218, 214, 212);position: absolute;width:500px; height: 400px;
+     left:calc((100% / 2 ) - 250px); top:250px; border-radius: 30px; padding: 30px;
+     box-sizing: border-box; /*padding:만큼 커지지말아라*/ box-shadow:4px 4px 2px;
+ }
+
+ #popup h3     {border: 1px solid red; position: absolute;bottom:200px;right:220px;}
+ #popup button {padding: 3px 6px; position:absolute; bottom:20px; right:20px;}
