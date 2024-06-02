@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>롯데리아 계산서</title>
+    <style>
+        header {border: 2px dashed red;max-width:400px;margin: auto;}
+
+        /*///////////////////////////////////////*/
+        #layout {max-width:400px; margin: auto;}
+        input[name="ss"] {float: right;}
+        fieldset {background: skyblue; border-radius: 20px;}
+        legend {text-align: center; font-weight: bolder;}
+
+        #non {display: none;}
+
+        footer {border: 2px dashed yellowgreen;max-width:400px;margin: auto;}
+        
+    </style>
+</head>
+<body>
+    <header>이쪽으로 주문 받기</header>
+    <div id="layout">
+        <fieldset>
+            <legend>롯데리아 주문서</legend>
+            <form action="#" method="post">
+                
+                    <p><label for="id">맘터 닫아서 오신 분 이름</label><input type="text" id="id" placeholder="정소은 바보" required name="ss"></p>
+                    <p><label for="pw">지금 가장 생각나는 사람은?</label><input type="password" id="pw" placeholder="메롱" required name="ss"></p>
+                    <p><label for="se">햄버거 검색</label><input type="search" id="se" required name="ss"></p>
+                    <p><label for="hom">전화번호</label><input type="tel" id="hom" required name="ss"></p>
+               
+                    <p><label for="cl">롯데리아는 무슨 색?</label><input type="color" id="cl" name="ss"></p>
+                    <p><label for="su">햄버거 주문 수량</label><input type="number" id="su" name="ss"></p>
+                    <p><label for="ma">햄버거 만족도</label><input type="range" id="ma" name="ss"></p>
+                    <p>개인정보 동의</p>
+                        <p>
+                            <label for="yes">예</label><input type="radio" id="yes" name="yn" value="yes">
+                            <label for="no">아니요</label><input type="radio" id="no" name="yn" value="no">
+                                                         <input type="radio" id="non" name="yn" checked="checked">
+                        </p>
+                    
+                    <p>
+                        햄버거 종류<br>
+                        <span>   
+                        싸이버거<input type="checkbox" name="checked" checked="checked" value="싸이버거">
+                        불고기버거<input type="checkbox" name="checked" checked="checked" value="불고기버거">
+                        스파이시버거<input type="checkbox" name="checked" checked="checked" value="스파이시버거">
+                        치즈버거<input type="checkbox" name="checked" checked="checked" value="치즈버거">
+                        핫소스버거<input type="checkbox" name="checked" checked="checked" value="핫소스버거">
+                        오징어버거<input type="checkbox" name="checked" checked="checked" value="오징어버거">
+                        버거킹<input type="checkbox" name="checked" checked="checked" value="버거킹">
+                        </span> 
+                    </p>
+                    
+                    <p><label for="fi">리뷰 사진</label><input type="file" id="fi" name="ss"></p>
+                    <p><button type="button"><img src="images/mo.jpg" alt="주문!"></button></p><button type="reset">취소하기</button>
+            </form>
+        </fieldset>
+    </div>
+    <footer>주문 수량</footer>
+    <script>
+        let x1 = document.querySelector('header');
+        let x2 = document.querySelector('footer');
+        let x3 = document.querySelector('button img');
+                 x3.addEventListener('click',ck);
+
+        let y1 = document.querySelector('#id');
+        let y2 = document.querySelector('#pw');
+        let y3 = document.querySelector('#se');
+        let y4 = document.querySelector('#hom');
+        let y5 = document.querySelector('#cl');
+        let y6 = document.querySelector('#su');
+        let y7 = document.querySelector('#ma');
+        let y9 = document.querySelector('span input');
+
+        function ck()
+        {
+            let y8 = document.querySelector("input[name='yn']:checked");
+            let y9 = document.querySelectorAll("input[name='checked']:checked");
+            
+            x1.innerHTML = y1.value + "<br>" + y2.value + "<br>" + y3.value + "<br>" + y4.value + "<br>" + y5.value + "<br>" +
+            y6.value + "<br>" + y7.value + "<br>" + y8.value + "<br>";
+            for(i of y9 )
+            {
+                x2.innerHTML += "<br>" + i.value + "<br>";
+            }
+
+        }
+
+       /* const xx = [10,20,30,40,50];
+
+        for(i of xx)
+        {
+            x2.innerHTML += i + "<br>";
+        }*/
+
+
+
+    </script>
+</body>
+</html>
